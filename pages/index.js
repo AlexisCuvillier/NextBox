@@ -29,7 +29,7 @@ export default function Home() {
             <Dashboard />
           </>
         ) : (
-          <p> Vous n'avez pas de super pouvoir</p>
+          <p> Vous n&apos;avez pas de super pouvoir</p>
         )}
       </main>
 
