@@ -13,7 +13,7 @@ import { musics } from "../Data/Data";
 
 export default function App() {
   const fetchAllMusics = async () => {
-    const res = await fetch("http://localhost:3000/api/music");
+    const res = await fetch("api/music");
     const AllMusics = await res.json();
 
     SetAllMusic(AllMusics);
