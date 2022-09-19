@@ -11,6 +11,7 @@ import { Pagination } from "swiper";
 import Image from "next/image";
 import { musics } from "../Data/Data";
 import AudioPlayer from "./AudioPlayer";
+import Vinyle from "./Vinyle";
 
 export default function App() {
   const fetchAllMusics = async () => {
@@ -30,27 +31,9 @@ export default function App() {
   const [oneMusic, SetOneMusic] = useState({});
 
   const selectMusic = (e) => {
-    SetOneMusic(allMusic[e.currentTarget.dataset.id - 1]);
+    const index = Number(e.currentTarget.dataset.id);
+    SetOneMusic(allMusic[index]);
   };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
 
 
 
@@ -60,10 +43,12 @@ export default function App() {
         pagination={{ clickable: true }}
         modules={[Pagination]}
         className={Styles.swiper}
+        slidesPerView={2}
+        loop={true}
       >
-        {allMusic.map((item) => (
-          <SwiperSlide key={item.id} className={Styles.swiperSlide}>
-            <Image src={item.img} alt={item.title} layout="fill" />
+        {allMusic.map((item, index) => (
+          <SwiperSlide key={index} className={Styles.swiperSlide}>
+            <Image className={Styles.img} src={item.img} alt={item.title} layout="fill" />
             <div className={Styles.title}>
               <h2 className={Styles.h3} data-id={item.id}  onClick={selectMusic }>
                 {item.title}
@@ -74,6 +59,7 @@ export default function App() {
       </Swiper>
 
       <AudioPlayer props={oneMusic}  />
+      <Vinyle />
     </>
   );
 }
