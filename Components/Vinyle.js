@@ -1,12 +1,12 @@
 import React from "react";
 import Image from "next/image";
-import Styles from '../styles/SliderAudio.module.css'
+import Styles from '../styles/Vinyle.module.css'
 
-export default function Vinyle() {
+export default function Vinyle({props}) {
   return (
     <>
-      <div>
-        <div className={Styles.test}>
+      <div className={Styles.base}>
+        <div>
           <div>
             <Image src="/assets/Images/vinyle.png" alt="vinyle" width={200} height={200}></Image>
             <div>

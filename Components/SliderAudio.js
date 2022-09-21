@@ -30,9 +30,13 @@ export default function App() {
   const [allMusic, SetAllMusic] = useState([]);
   const [oneMusic, SetOneMusic] = useState({});
 
-  const selectMusic = (e) => {
-    const index = Number(e.currentTarget.dataset.id);
-    SetOneMusic(allMusic[index]);
+  // const selectMusic = (e) => {
+  //   const index = Number(e.currentTarget.dataset.id);
+  //   SetOneMusic(allMusic[index-1]);
+
+    const selectMusic = (e) => {
+      const index = Number(e.currentTarget.dataset.id);
+      SetOneMusic(allMusic[index-1]);
   };
 
 
